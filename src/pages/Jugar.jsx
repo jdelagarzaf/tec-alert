@@ -8,6 +8,7 @@ import gameStart from '../assets/imgs/gameStart.png';
 import profile from '../assets/imgs/profile.webp';
 import lupa from '../assets/imgs/lupa.png';
 import plusSign2 from '../assets/imgs/plusSign2.png';
+import upload from '../assets/imgs/upload.png';
 
 export default function Jugar() {
     const { user,  } = useAuth();
@@ -77,12 +78,10 @@ export default function Jugar() {
              <h2 className="text-xl md:text-5xl font-bold py-4 text-center md:pb-12">¿Como Jugar?</h2>
              <div className="md:w-3/4 flex flex-col justify-center items-center gap-8">
                  <iframe width="860" height="515" src="https://www.youtube.com/embed/78R_2aFSMFg?si=eiAT9AgliYrEOWYI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                 
              </div>
              {user && user.is_admin && (
                 <div className="flex bg-white px-8 py-4 m-4 rounded text-black items-center border-2 border-black justify-around">
-                    <iframe width="860" height="515" src="https://www.youtube.com/embed/78R_2aFSMFg?si=eiAT9AgliYrEOWYI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+                    <img src={upload} alt="upload.png" width="28px" height="28px"/>
                     <p className="text-black rounded ">Subir Video</p>
                 </div>
              )}
