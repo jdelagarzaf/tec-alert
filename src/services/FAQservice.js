@@ -1,4 +1,4 @@
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = process.env.REACT_APP_API_URL+ '/api/web';
 
 export async function getFaqs() {
   const res = await fetch(`${API_URL}/getfaqs`);

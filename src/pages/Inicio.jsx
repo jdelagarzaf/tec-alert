@@ -20,7 +20,7 @@ export default function Inicio() {
 
   return (
     <div id="bienvenida">
-        <div className="flex justify-center items-center bg-sky-800 p-4"> 
+        <div className="flex justify-center items-center bg-sky-800 p-4">
             <img src={logoBlanco} alt="Logo_blanco.png" className="w-3/4" />
         </div> 
         <div className="bg-indigo-950 flex justify-center items-center text-white md:px-20">

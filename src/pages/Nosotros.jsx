@@ -33,7 +33,7 @@ const users = {
     },
     "carmen": {
         "name": "Carmen Banda",
-        "photo": "https://avatar.iran.liara.run/username?username=Carmen+Banda",
+        "photo": "https://i.imgur.com/FtnmISC.jpeg",
         "desc": "Aspirante a ciberseguridad con experiencia en hackeo y modificaciones de consolas, junto con experiencia en herramientas de pen-testing de kali Linux. Experiencia en el desarrollo web y de videojuegos y parte del equipo de desarrollo detrás de TecAlert",
         "skills": "Certificado IBM AGILE, diseño de personajes, desarrollo de videojuegos y manejo de virtual machines"
     }
