@@ -16,7 +16,7 @@ import FaqModal from "../components/FAQmodal";
 export default function Jugar() {
     const { user,  } = useAuth();
     const { data, loading } = useLeaderboard();
-    const { faqs, loading: loadingFaqs, error, refresh, addFaq, editFaq, deleteFaq } = useFAQ();
+    const { faqs, refresh, addFaq, editFaq, deleteFaq } = useFAQ();
 
     const [modalOpen, setModalOpen] = useState(false);
     const [modalData, setModalData] = useState(null); // null = new, else = editing
