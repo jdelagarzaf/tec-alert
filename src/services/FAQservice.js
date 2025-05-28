@@ -14,15 +14,22 @@ export async function addFaq(faq) {
 }
 
 export async function editFaq(id, updatedFaq) {
-  return fetch(`${API_URL}/editfaq/${id}`, {
-    method: 'PUT',
+  return fetch(`${API_URL}/editFAQ`, {
+    method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(updatedFaq),
+    body: JSON.stringify({
+      question_id: id,
+      question: updatedFaq.question,
+      answer: updatedFaq.answer
+    }),
   });
 }
 
 export async function deleteFaq(id) {
-  return fetch(`${API_URL}/deletefaq/${id}`, {
-    method: 'DELETE',
+  return fetch(`${API_URL}/deletefaq`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ question_id: id }),
   });
 }
+

@@ -9,12 +9,19 @@ import profile from '../assets/imgs/profile.webp';
 import lupa from '../assets/imgs/lupa.png';
 import plusSign2 from '../assets/imgs/plusSign2.png';
 import upload from '../assets/imgs/upload.png';
+import { useState } from "react";
+import FaqModal from "../components/FAQmodal";
+
 
 export default function Jugar() {
     const { user,  } = useAuth();
     const { data, loading } = useLeaderboard();
-    const { faqs } = useFAQ();
-    //const { faqs, loading, error, refresh, addFaq, editFaq, deleteFaq } = useFAQ();
+    const { faqs, loading: loadingFaqs, error, refresh, addFaq, editFaq, deleteFaq } = useFAQ();
+
+    const [modalOpen, setModalOpen] = useState(false);
+    const [modalData, setModalData] = useState(null); // null = new, else = editing
+
+
     
   return (
     <div id="juego">
@@ -42,12 +49,15 @@ export default function Jugar() {
                         <p className="text-lg">Loading...</p>
                 ) : (
                     data.map((player, index) => (
-                        <div className="flex gap-4 md:gap-16 items-center">
-                        <img src={profile} alt="Foto de Integrante" className="object-cover rounded-full text-center w-[3rem] md:w-[6rem]" />
-                        <p className="text-md md:text-4xl font-semibold">{player.email.split('@')[0]}</p>
-                        <p className="text-md md:text-4xl font-semibold"> {String(player.main_score).padStart(3, '0')}</p>
+                    <div key={index} className="flex items-center gap-4 md:gap-8 text-left">
+                        <img  src={profile}  alt="Foto del jugador"  className="object-cover rounded-full w-[3rem] md:w-[4rem]"  />
+                        <div className="flex justify-start items-center gap-8 md:gap-16 w-full">
+                        <p className="text-md md:text-2xl font-semibold w-50 truncate">{player.email.split('@')[0]}</p>
+                        <p className="text-md md:text-2xl font-semibold w-12">{String(player.main_score).padStart(3, '0')}</p>
                         </div>
+                    </div>
                     ))
+
                 )}
                  
              </div>
@@ -60,16 +70,28 @@ export default function Jugar() {
                         <img src={lupa} alt="Imagen del juego" className="object-contain absolute left-0 h-[6rem] md:h-[12rem]"/>
                         <p className="text-md md:text-4xl font-semibold text-black md:pl-20">Buscar...</p>
                     </div>
-                    {user && user.is_admin && (
-                        <img src={plusSign2} alt="Logo" style={{ width: "2rem" }}/>
+                    {user?.is_admin && (
+                        <img src={plusSign2} alt="Agregar FAQ" style={{ width: "2rem", cursor: "pointer" }} onClick={() => { setModalData(null); setModalOpen(true); }} />
                     )}
+
                  </div>
                  <div className="flex flex-col gap-8 md:w-3/4">
                     {faqs.map(faq => (
-                        <div key={faq.id}>
-                            <p className="text-md md:text-4xl font-semibold">{faq.question}</p>
-                            <p className="text-md md:text-4xl font-nromal">{faq.answer}</p>
+                    <div key={faq.question_id} className="text-white rounded w-full">
+                        <p className="text-lg md:text-2xl font-bold">{faq.question}</p>
+                        <p className="text-md md:text-xl">{faq.answer}</p>
+
+                        {user?.is_admin && (
+                        <div className="flex gap-4 mt-4">
+                            <button className="bg-yellow-500 text-white px-4 py-1 rounded" onClick={() => { setModalData(faq);  setModalOpen(true); }} >
+                                Editar
+                            </button>
+                            <button className="bg-red-600 text-white px-4 py-1 rounded" onClick={async () => { await deleteFaq(faq.question_id); refresh(); }} >
+                                Borrar
+                            </button>
                         </div>
+                        )}
+                    </div>
                     ))}
                  </div>
              </div>
@@ -86,6 +108,20 @@ export default function Jugar() {
                 </div>
              )}
          </div>
+         {modalOpen && (
+            <FaqModal initialData={modalData} onClose={() => setModalOpen(false)}
+                onSave={async (data) => {
+                if (modalData?.question_id) {
+                    await editFaq(modalData.question_id, data);
+                } else {
+                    await addFaq(data);
+                }
+                setModalOpen(false);
+                refresh();
+                }}
+
+            />
+            )}
     </div>
   );
 }
