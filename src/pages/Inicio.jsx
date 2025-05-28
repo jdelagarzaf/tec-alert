@@ -1,4 +1,6 @@
 import { useAuth } from "../context/AuthContext";
+import useContent from "../hooks/useContent";
+import EditableTextSection from "../components/EditableTextSection";
 
 import logoBlanco from '../assets/logos/logo_blanco.png';
 import bandera from '../assets/imgs/bandera.png';
@@ -17,6 +19,10 @@ import plusSign from '../assets/imgs/plusSign.png';
 
 export default function Inicio() {
     const { user,  } = useAuth();
+    const requisitosText = useContent("requisitos_basicos");
+    const alcanceText = useContent("alcance");
+    const bienestarText = useContent("salud_bienestar");
+
 
   return (
     <div id="bienvenida">
@@ -26,12 +32,7 @@ export default function Inicio() {
         <div className="bg-indigo-950 flex justify-center items-center text-white md:px-20">
             <div className="w-3/4 md:flex justify-center items-center py-8 md:py-16 ">
                 <div className="w-full md:w-1/2">
-                    <h1 className="text-xl md:text-5xl font-bold py-4">Requisitos Básicos</h1>
-                    <p className="text-md md:text-3xl">
-                        Tec Alert es un juego educativo que busca enseñar a los estudiantes del Tec de Monterrey como actuar en caso de una emergencia. <br/>
-                        Para jugar, es necesario que tengas instalado el navegador Google Chrome y una conexión a internet estable.<br/>
-                        Tambien, es importante que tengas un teclado y un mouse, ya que el juego no es compatible con pantallas táctiles.
-                    </p>
+                    <EditableTextSection title="Requisitos Básicos" contentHook={requisitosText} user={user} titleClass="text-xl md:text-5xl font-bold py-4" textClass="text-md md:text-3xl" containerClass="flex items-center"/>
                 </div>
                 <div className="flex justify-center items-center py-8 md:py-2 md:w-1/2">
                     <img src={bandera} alt="Bandera.png" className="h-auto object-contain w-1/2 md:w-auto" />
@@ -45,12 +46,7 @@ export default function Inicio() {
                     <img src={casita} alt="Casita.png" width="250px" height="300 px" className="w-1/4 md:w-1/2 hidden md:flex"></img>
                 </div>
                 <div className="md:w-2/3">
-                    <h1 className="text-xl md:text-5xl font-bold py-4">Alcance</h1>
-                    <p className="text-md md:text-3xl">
-                        El juego está diseñado para estudiantes del Tecnológico de Monterrey, específicamente para aquellos que están en los primeros semestres de la carrera. <br/>
-                        El objetivo es que los estudiantes aprendan a actuar en caso de una emergencia, ya sea un sismo, un incendio o cualquier otra situación de riesgo. <br/>
-                        El juego es una herramienta educativa que busca fomentar la cultura de la prevención y la seguridad en el campus.
-                    </p>
+                    <EditableTextSection title="Alcance" contentHook={alcanceText} user={user} titleClass="text-xl md:text-5xl font-bold py-4" textClass="text-md md:text-3xl" containerClass="flex items-center"/>
                 </div>
             </div>
         </div>
@@ -110,12 +106,7 @@ export default function Inicio() {
                 <img src={corazon} alt="Corazon.png" width="250px" height="250px" className="w-1/6 md:w-1/2"></img>
             </div>
             <div className="md:w-1/3">
-                <h1 className="text-xl md:text-5xl m-4 font-bold py-4">Salud y Bienestar</h1>
-                <p className="text-md md:text-3xl m-4">
-                    Tec Alert va de la mano con el ODS 3: Salud y Bienestar. <br/>
-                    Nuestro objetivo es promover el bienestar de los estudiantes del Tecnológico de Monterrey,
-                    enseñándoles a actuar de manera segura y responsable en caso de una emergencia. <br/>
-                </p>
+                <EditableTextSection title="Salud y Bienestar" contentHook={bienestarText} user={user} titleClass="text-xl md:text-5xl font-bold py-4" textClass="text-md md:text-3xl" containerClass="flex items-center"/>
             </div>
             <div className="flex justify-center items-center md:w-1/3">
                 <img src={bienestar} alt="Bienestar.png" width="250px" height="250px" className="w-1/4 md:w-1/2"></img>

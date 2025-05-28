@@ -1,4 +1,7 @@
 import { useState } from "react";
+import useContent from "../hooks/useContent";
+import EditableTextSection from "../components/EditableTextSection";
+import { useAuth } from "../context/AuthContext";
 
 import teusGames from "../assets/logos/teus_games.png";
 import scroll from "../assets/imgs/scroll.png";
@@ -40,7 +43,15 @@ const users = {
 };
 
 export default function Nosotros() {
+    const { user,  } = useAuth();
+
     const [bio, setBio] = useState(users.humberto);
+
+    const teusText = useContent("teus_games");
+    const misionText = useContent("mision");
+    const visionText = useContent("vision");
+    const valoresText = useContent("valores");
+    const alcanceText = useContent("alcance_nosotros");
 
   const mostrarBio = (nombre) => {
     setBio(users[nombre]);
@@ -53,10 +64,7 @@ export default function Nosotros() {
          <div className="bg-sky-600 flex justify-center items-center text-white md:px-20">
              <div className="w-3/4 md:flex justify-center items-center md:py-16">
                  <div className="md:w-1/2">
-                     <h2 className="text-xl md:text-5xl font-bold py-4">Teus Games</h2>
-                     <p className="text-md md:text-3xl">
-                        Somos un equipo de estudiantes del Tecnológico de Monterrey, apasionados por el desarrollo de videojuegos y la creación de experiencias interactivas. Nuestro objetivo es educar a los estudiantes sobre la seguridad en el campus a través de juegos divertidos y educativos. <br/>
-                     </p>
+                    <EditableTextSection title="Teus Games" contentHook={teusText} user={user} titleClass="text-xl md:text-5xl font-bold py-4" textClass="text-md md:text-3xl" containerClass="flex items-center"/>
                  </div>
                  <div className="flex justify-center items-center md:w-1/2 py-8">
                      <img src={teusGames} alt="Imagen del juego" className="h-auto object-contain w-1/2 md:w-auto" />
@@ -93,24 +101,15 @@ export default function Nosotros() {
              <div className="md:w-3/4 md:flex justify-center items-center py-16">
                  <div className="md:w-1/3 flex flex-col justify-center items-center">
                      <img src={scroll} alt="Imagen del juego" className="h-auto object-contain" style={{ height: "12rem" }}/>
-                     <h2 className="text-xl md:text-5xl font-bold md:py-4">Mision</h2>
-                     <p className="text-md md:text-xl text-center">
-                        Nuestra misión es educar a los estudiantes del Tecnológico de Monterrey sobre la seguridad en el campus a través de experiencias interactivas y entretenidas. Buscamos fomentar una cultura de prevención y seguridad, preparando a los estudiantes para actuar adecuadamente en caso de una emergencia.
-                     </p>
+                     <EditableTextSection title="Mision" contentHook={misionText} user={user} titleClass="text-xl md:text-5xl font-bold md:py-4" textClass="text-md md:text-xl text-center" containerClass="flex justify-center items-center"/>
                  </div>
                  <div className="md:w-1/3 flex flex-col justify-center items-center">
                      <img src={telescope} alt="Imagen del juego" className="h-auto object-contain" style={{ height: "12rem" }}/>
-                     <h2 className="text-xl md:text-5xl font-bold md:py-4">Vision</h2>
-                     <p className="text-md md:text-xl text-center">
-                        Nuestra visión es ser reconocidos como un referente en la educación sobre seguridad en el campus a través de videojuegos. Queremos que nuestros juegos sean una herramienta valiosa para los estudiantes, ayudándoles a comprender la importancia de la seguridad y cómo actuar en situaciones de emergencia.
-                     </p>
+                     <EditableTextSection title="Vision" contentHook={visionText} user={user} titleClass="text-xl md:text-5xl font-bold md:py-4" textClass="text-md md:text-xl text-center" containerClass="flex justify-center items-center"/>
                  </div>
                  <div className="md:w-1/3 flex flex-col justify-center items-center">
                      <img src={star} alt="Imagen del juego" className="h-auto object-contain" style={{ height: "12rem" }}/>
-                     <h2 className="text-xl md:text-5xl font-bold md:py-4">Valores</h2>
-                     <p className="text-md md:text-xl text-center">
-                        Nuestros valores son la seguridad, la innovación y la colaboración. Creemos que la seguridad es una prioridad en el campus, y trabajamos para crear juegos que sean innovadores y colaborativos, fomentando el trabajo en equipo y la participación activa de los estudiantes. Queremos que nuestros juegos sean una experiencia divertida y educativa para todos.
-                     </p>
+                     <EditableTextSection title="Valores" contentHook={valoresText} user={user} titleClass="text-xl md:text-5xl font-bold md:py-4" textClass="text-md md:text-xl text-center" containerClass="flex justify-center items-center"/>
                  </div>
              </div>
          </div>
@@ -163,9 +162,7 @@ export default function Nosotros() {
              <h2 className="text-xl md:text-5xl font-bold py-4">Alcance</h2>
              <div className="w-3/4 md:flex justify-center items-center">
                  <div className="md:w-1/2">
-                     <p className="text-md md:text-3xl">
-                        Tec Alert es un juego educativo diseñado para estudiantes del Tecnológico de Monterrey, específicamente para aquellos que están en los primeros semestres de la carrera. El objetivo es que los estudiantes aprendan a actuar en caso de una emergencia, ya sea un sismo, un incendio o cualquier otra situación de riesgo. El juego es una herramienta educativa que busca fomentar la cultura de la prevención y la seguridad en el campus.
-                     </p>
+                     <EditableTextSection title="Alcance" contentHook={alcanceText} user={user} titleClass="hidden" textClass="text-md md:text-3xl" containerClass="flex items-center"/>
                  </div>
                  <div className="flex justify-center items-center md:w-1/2">
                      <img src={people} alt="Imagen del juego" className="h-auto object-contain" />

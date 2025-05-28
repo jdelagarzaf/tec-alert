@@ -3,7 +3,6 @@ import useFAQ from '../hooks/useFAQ';
 import useLeaderboard from "../hooks/useLeaderboard";
 
 import logoBlanco from '../assets/logos/logo_blanco.png';
-import editIcon from '../assets/imgs/editIcon.png';
 import gameStart from '../assets/imgs/gameStart.png';
 import profile from '../assets/imgs/profile.webp';
 import lupa from '../assets/imgs/lupa.png';
@@ -19,7 +18,7 @@ export default function Jugar() {
     const { faqs, refresh, addFaq, editFaq, deleteFaq } = useFAQ();
 
     const [modalOpen, setModalOpen] = useState(false);
-    const [modalData, setModalData] = useState(null); // null = new, else = editing
+    const [modalData, setModalData] = useState(null);
 
 
     
@@ -31,9 +30,6 @@ export default function Jugar() {
          <div className="bg-sky-600 flex flex-col justify-center items-center text-white md:px-20 py-8">
              <div className="flex justify-center items-center py-4">
                  <img src={logoBlanco} alt="Logo" className="w-1/2" />
-                {user && user.is_admin && (
-                 <img src={editIcon} alt="Logo" style={{ width: "5rem" }}/>
-                )}
              </div>
              <div className="w-3/4">
                 <a href="https://elitegentro.github.io/TecAlertGameTest/" target="_blank" rel="noopener noreferrer">
