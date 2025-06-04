@@ -17,8 +17,9 @@ export default function FaqModal({ initialData = {}, onSave, onClose }) {
   const isEditing = Boolean(initialData?.question_id);
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-      <div className="bg-white text-black p-6 rounded shadow-lg w-11/12 md:w-1/2">
+    <div className="fixed inset-0 flex justify-center items-center z-50">
+      <div className="absolute inset-0 backdrop-blur-xs bg-black/20"></div>
+      <div className="relative bg-white text-black p-6 rounded shadow-lg w-11/12 md:w-1/2">
         <h2 className="text-xl font-bold mb-4">{isEditing ? "Editar FAQ" : "Agregar FAQ"}</h2>
         
         <label className="block font-semibold">Pregunta:</label>

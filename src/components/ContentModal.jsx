@@ -15,7 +15,7 @@ export default function ContentModal({ title, initialText = "", onSave, onClose 
   return (
     <div className="fixed inset-0 flex justify-center items-center z-50">
       <div className="absolute inset-0 backdrop-blur-xs bg-black/20"></div>
-      <div className="relative  bg-white text-black p-6 rounded shadow-lg w-11/12 md:w-1/2">
+      <div className="relative bg-white text-black p-6 rounded shadow-lg w-11/12 md:w-1/2">
         <h2 className="text-xl font-bold mb-4">Editar: {title}</h2>
         <textarea
           value={text}
