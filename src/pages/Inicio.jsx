@@ -101,14 +101,14 @@ export default function Inicio() {
             )}
         </div>
 
-        <div className="bg-sky-950 md:flex justify-center items-center text-white py-8 md:px-20 md:h-[800px]">
+        <div className="bg-sky-950 md:flex justify-center items-center text-white py-8 px-8 md:px-20 md:h-[800px]">
             <div className="flex jmd:ustify-center items-center pl-8 md:pl-0 md:w-1/3">
                 <img src={corazon} alt="Corazon.png" width="250px" height="250px" className="w-1/6 md:w-1/2"></img>
             </div>
             <div className="md:w-1/3">
                 <EditableTextSection title="Salud y Bienestar" contentHook={bienestarText} user={user} titleClass="text-xl md:text-5xl font-bold py-4" textClass="text-md md:text-3xl" containerClass="flex items-center"/>
             </div>
-            <div className="flex justify-center items-center md:w-1/3">
+            <div className="flex justify-center items-center md:w-1/3 pt-4">
                 <img src={bienestar} alt="Bienestar.png" width="250px" height="250px" className="w-1/4 md:w-1/2"></img>
             </div>
         </div>

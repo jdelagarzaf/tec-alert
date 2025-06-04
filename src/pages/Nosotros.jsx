@@ -97,7 +97,7 @@ export default function Nosotros() {
                  </div>
              </div>
          </div>
-         <div className="bg-sky-600 flex justify-center items-center text-white md:px-20">
+         <div className="bg-sky-600 flex justify-center items-center text-white md:px-20 px-8">
              <div className="md:w-3/4 md:flex justify-center items-center py-16">
                  <div className="md:w-1/3 flex flex-col justify-center items-center">
                      <img src={scroll} alt="Imagen del juego" className="h-auto object-contain" style={{ height: "12rem" }}/>
@@ -117,44 +117,44 @@ export default function Nosotros() {
              <h2 className="text-2xl md:text-5xl font-bold pb-8">Tecnologias</h2>
              <div className="md:w-3/4 flex flex-wrap justify-center items-center gap-4 md:gap-12">
                  <div className="w-1/3 flex bg-stone-200 rounded-xl px-4 md:p-8 gap-4 items-center">
-                    <div className="text-black text-4xl text-center align-center"><i class="devicon-unity-plain colored"></i></div>
-                    <p className="text-black text-md md:text-4xl font-bold">Unity Engine</p>
+                    <div className="text-black text-2xl md:text-4xl text-center align-center"><i class="devicon-unity-plain colored"></i></div>
+                    <p className="text-black text-sm md:text-4xl font-bold">Unity Engine</p>
                  </div>
                  <div className="w-1/3 flex bg-stone-200 rounded-xl px-4 md:p-8 gap-4 items-center">
-                    <div className="text-black text-4xl text-center align-center"><i class="devicon-microsoftsqlserver-plain colored"></i></div>
-                    <p className="text-black text-md md:text-4xl font-bold">SQL Server</p>
+                    <div className="text-black text-2xl md:text-4xl text-center align-center"><i class="devicon-microsoftsqlserver-plain colored"></i></div>
+                    <p className="text-black text-sm md:text-4xl font-bold">SQL Server</p>
                  </div>
                  <div className="w-1/3 flex bg-stone-200 rounded-xl px-4 md:p-8 gap-4 items-center">
-                    <div className="text-black text-4xl text-center align-center"><i class="devicon-typescript-plain colored"></i></div>
-                    <p className="text-black text-md md:text-4xl font-bold">Typescript</p>
+                    <div className="text-black text-2xl md:text-4xl text-center align-center"><i class="devicon-typescript-plain colored"></i></div>
+                    <p className="text-black text-sm md:text-4xl font-bold">Typescript</p>
                  </div>
                  <div className="w-1/3 flex bg-stone-200 rounded-xl px-4 md:p-8 gap-4 items-center">
-                    <div className="text-black text-4xl text-center align-center"><i class="devicon-react-plain colored"></i></div>
-                    <p className="text-black text-md md:text-4xl font-bold">React</p>
+                    <div className="text-black text-2xl md:text-4xl text-center align-center"><i class="devicon-react-plain colored"></i></div>
+                    <p className="text-black text-sm md:text-4xl font-bold">React</p>
                  </div>
                  <div className="w-1/3 flex bg-stone-200 rounded-xl px-4 md:p-8 gap-4 items-center">
-                    <div className="text-black text-4xl text-center align-center"><i class="devicon-firebase-plain colored"></i></div>
-                    <p className="text-black text-md md:text-4xl font-bold">Firebase</p>
+                    <div className="text-black text-2xl md:text-4xl text-center align-center"><i class="devicon-firebase-plain colored"></i></div>
+                    <p className="text-black text-sm md:text-4xl font-bold">Firebase</p>
                  </div>
                  <div className="w-1/3 flex bg-stone-200 rounded-xl px-4 md:p-8 gap-4 items-center">
-                    <div className="text-black text-4xl text-center align-center"><i class="devicon-csharp-plain colored"></i></div>
-                    <p className="text-black text-md md:text-4xl font-bold">C#</p>
+                    <div className="text-black text-2xl md:text-4xl text-center align-center"><i class="devicon-csharp-plain colored"></i></div>
+                    <p className="text-black text-sm md:text-4xl font-bold">C#</p>
                  </div>
                  <div className="w-1/3 flex bg-stone-200 rounded-xl px-4 md:p-8 gap-4 items-center">
-                    <div className="text-black text-4xl text-center align-center"><i class="devicon-nodejs-plain colored"></i></div>
-                    <p className="text-black text-md md:text-4xl font-bold">Node</p>
+                    <div className="text-black text-2xl md:text-4xl text-center align-center"><i class="devicon-nodejs-plain colored"></i></div>
+                    <p className="text-black text-sm md:text-4xl font-bold">Node</p>
                  </div>
                  <div className="w-1/3 flex bg-stone-200 rounded-xl px-4 md:p-8 gap-4 items-center">
-                    <div className="text-black text-4xl text-center align-center"><i class="devicon-npm-original-wordmark colored"></i></div>
-                    <p className="text-black text-md md:text-4xl font-bold">NPM</p>
+                    <div className="text-black text-2xl md:text-4xl text-center align-center"><i class="devicon-npm-original-wordmark colored"></i></div>
+                    <p className="text-black text-sm md:text-4xl font-bold">NPM</p>
                  </div>
                  <div className="w-1/3 flex bg-stone-200 rounded-xl px-4 md:p-8 gap-4 items-center">
-                    <div className="text-black text-4xl text-center align-center"><i class="devicon-tailwindcss-original colored"></i></div>
-                    <p className="text-black text-md md:text-4xl font-bold">Tailwind</p>
+                    <div className="text-black text-2xl md:text-4xl text-center align-center"><i class="devicon-tailwindcss-original colored"></i></div>
+                    <p className="text-black text-sm md:text-4xl font-bold">Tailwind</p>
                  </div>
                  <div className="w-1/3 flex bg-stone-200 rounded-xl px-4 md:p-8 gap-4 items-center">
-                    <div className="text-black text-4xl text-center align-center"><i class="devicon-azuredevops-plain colored"></i></div>
-                    <p className="text-black text-md md:text-4xl font-bold">Devops</p>
+                    <div className="text-black text-2xl md:text-4xl text-center align-center"><i class="devicon-azuredevops-plain colored"></i></div>
+                    <p className="text-black text-sm md:text-4xl font-bold">Devops</p>
                  </div>
              </div>
          </div>

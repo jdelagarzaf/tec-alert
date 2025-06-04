@@ -19,7 +19,7 @@ export default function EditableTextSection({
       <div className={containerClass}>
         <h1 className={`font-bold py-4 ${titleClass}`}>{title}</h1>
         {user?.is_admin && (
-          <img src={editIcon} alt="edit" className={`cursor-pointer ml-2 ${iconClass}`} onClick={() => setModalOpen(true)} />
+          <img src={editIcon} alt="edit" className={`cursor-pointer h-1/16 w-1/16 md:w-1/8 md:h-1/8 ml-2 ${iconClass}`} onClick={() => setModalOpen(true)} />
         )}
       </div>
       <p className={textClass}>
