@@ -8,6 +8,7 @@ import IniciarSesion from './pages/IniciarSesion';
 import Registrar from './pages/Registrar';
 import NotFound from './pages/NotFound';
 import Navbar from './components/Navbar';
+import BackToTopButton from './components/BackToTopButton';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/registrar" element={<Registrar />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <BackToTopButton />
       </AuthProvider>
     </Router>
   );
